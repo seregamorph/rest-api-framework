@@ -1,0 +1,11 @@
+spring.jackson:
+  serialization:
+    indent-output: true
+    write-dates-as-timestamps: false
+    write-date-timestamps-as-nanoseconds: false
+    fail-on-empty-beans: false
+  deserialization:
+    fail-on-unknown-properties: false
+    wrap-exceptions: false
+spring.jpa.hibernate:
+  ddl-auto: none

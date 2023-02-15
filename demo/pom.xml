@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.seregamorph.restapi</groupId>
+        <artifactId>rest-api-framework</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>rest-api-framework-demo-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>demo-boot23</module>
+        <module>demo-boot24-kotlin</module>
+        <module>demo-common</module>
+        <module>demo-version-agnostic</module>
+    </modules>
+
+    <properties>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <!--skip deploy-->
+        <nexus-staging-maven-plugin.phase>none</nexus-staging-maven-plugin.phase>
+    </properties>
+
+    <dependencies>
+        <!-- test -->
+        <dependency>
+            <groupId>com.seregamorph.restapi</groupId>
+            <artifactId>rest-api-framework-spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.seregamorph.restapi</groupId>
+                <artifactId>rest-api-framework-demo-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

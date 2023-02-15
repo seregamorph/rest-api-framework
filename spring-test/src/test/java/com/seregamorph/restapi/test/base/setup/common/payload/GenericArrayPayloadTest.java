@@ -1,0 +1,73 @@
+package com.seregamorph.restapi.test.base.setup.common.payload;
+
+import static com.seregamorph.restapi.test.base.setup.common.payload.GenericPayloads.array;
+import static com.seregamorph.restapi.test.base.setup.common.payload.GenericPayloads.object;
+
+public class GenericArrayPayloadTest extends GenericPayloadTest {
+
+    private static final GenericArrayPayload GENERIC_PAYLOAD = array(String.class)
+            .add(object()
+                    .requiredField("field 1[0].1 - required - normal value", "value 1[0].1")
+                    .requiredField("field 1[0].2 - required - nested payload", object(String.class)
+                            .requiredField("field 1[0].2.1 - required", "value 1[0].2.1")
+                            .optionalField("field 1[0].2.2 - optional", "value 1[0].2.2")
+                            .redundantField("field 1[0].2.3 - redundant", "value 1[0].2.3"))
+                    .requiredField("field 1[0].3 - required - nested payloads", array(String.class)
+                            .add(object()
+                                    .requiredField("field 1[0].3[0].1 - required", "value 1[0].3[0].1")
+                                    .optionalField("field 1[0].3[0].2 - optional", "value 1[0].3[0].2")
+                                    .redundantField("field 1[0].3[0].3 - redundant", "value 1[0].3[0].3"))
+                            .add(object()
+                                    .requiredField("field 1[0].3[1].1 - required", "value 1[0].3[1].1")
+                                    .optionalField("field 1[0].3[1].2 - optional", "value 1[0].3[1].2")
+                                    .redundantField("field 1[0].3[1].3 - redundant", "value 1[0].3[1].3")))
+                    .optionalField("field 1[0].4 - optional - normal value", "value 1[0].4")
+                    .optionalField("field 1[0].5 - optional - nested payload", object(String.class)
+                            .requiredField("field 1[0].5.1 - required", "value 1[0].5.1")
+                            .optionalField("field 1[0].5.2 - optional", "value 1[0].5.2")
+                            .redundantField("field 1[0].5.3 - redundant", "value 1[0].5.3"))
+                    .optionalField("field 1[0].6 - optional - nested payloads", array(String.class)
+                            .add(object()
+                                    .requiredField("field 1[0].6[0].1 - required", "value 1[0].6[0].1")
+                                    .optionalField("field 1[0].6[0].2 - optional", "value 1[0].6[0].2")
+                                    .redundantField("field 1[0].6[0].3 - redundant", "value 1[0].6[0].3"))
+                            .add(object()
+                                    .requiredField("field 1[0].6[1].1 - required", "value 1[0].6[1].1")
+                                    .optionalField("field 1[0].6[1].2 - optional", "value 1[0].6[1].2")
+                                    .redundantField("field 1[0].6[1].3 - redundant", "value 1[0].6[1].3")))
+                    .redundantField("field 1[0].7 - redundant", "value 1[0].7"))
+            .add(object()
+                    .requiredField("field 1[1].1 - required - normal value", "value 1[1].1")
+                    .requiredField("field 1[1].2 - required - nested payload", object(String.class)
+                            .requiredField("field 1[1].2.1 - required", "value 1[1].2.1")
+                            .optionalField("field 1[1].2.2 - optional", "value 1[1].2.2")
+                            .redundantField("field 1[1].2.3 - redundant", "value 1[1].2.3"))
+                    .requiredField("field 1[1].3 - required - nested payloads", array(String.class)
+                            .add(object()
+                                    .requiredField("field 1[1].3[0].1 - required", "value 1[1].3[0].1")
+                                    .optionalField("field 1[1].3[0].2 - optional", "value 1[1].3[0].2")
+                                    .redundantField("field 1[1].3[0].3 - redundant", "value 1[1].3[0].3"))
+                            .add(object()
+                                    .requiredField("field 1[1].3[1].1 - required", "value 1[1].3[1].1")
+                                    .optionalField("field 1[1].3[1].2 - optional", "value 1[1].3[1].2")
+                                    .redundantField("field 1[1].3[1].3 - redundant", "value 1[1].3[1].3")))
+                    .optionalField("field 1[1].4 - optional - normal value", "value 1[1].4")
+                    .optionalField("field 1[1].5 - optional - nested payload", object(String.class)
+                            .requiredField("field 1[1].5.1 - required", "value 1[1].5.1")
+                            .optionalField("field 1[1].5.2 - optional", "value 1[1].5.2")
+                            .redundantField("field 1[1].5.3 - redundant", "value 1[1].5.3"))
+                    .optionalField("field 1[1].6 - optional - nested payloads", array(String.class)
+                            .add(object()
+                                    .requiredField("field 1[1].6[0].1 - required", "value 1[1].6[0].1")
+                                    .optionalField("field 1[1].6[0].2 - optional", "value 1[1].6[0].2")
+                                    .redundantField("field 1[1].6[0].3 - redundant", "value 1[1].6[0].3"))
+                            .add(object()
+                                    .requiredField("field 1[1].6[1].1 - required", "value 1[1].6[1].1")
+                                    .optionalField("field 1[1].6[1].2 - optional", "value 1[1].6[1].2")
+                                    .redundantField("field 1[1].6[1].3 - redundant", "value 1[1].6[1].3")))
+                    .redundantField("field 1[1].7 - redundant", "value 1[1].7"));
+
+    public GenericArrayPayloadTest() {
+        super(GENERIC_PAYLOAD, 18, 18, 14);
+    }
+}
