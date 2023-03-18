@@ -1,18 +1,17 @@
 package com.seregamorph.restapi.partial;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasToString;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.seregamorph.restapi.test.common.AbstractUnitTest;
 import com.seregamorph.restapi.test.utils.JsonExtensions;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
 import lombok.val;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+
+import static org.hamcrest.Matchers.*;
 
 public class PartialPayloadFactoryTest extends AbstractUnitTest implements JsonExtensions {
 
@@ -205,15 +204,23 @@ public class PartialPayloadFactoryTest extends AbstractUnitTest implements JsonE
     }
 
     @Test
-    public void nestedPartialResourceShouldHavePartialToString() {
+    public void nestedPartialResourceShouldHavePartialToString() throws IOException {
         val resource = SimplePartialResource.create()
                 .setName(VALUE_NAME)
-                .setTitle(VALUE_TITLE)
+                .setTitle(null)
                 .setLinked(SimplePartialResource.create()
                         .setId(10L));
+        collector.checkThat(resource, hasToString("Partial<SimplePartialResource>{name=value, " +
+                "title=null, linked=Partial<SimplePartialResource>{id=10}}"));
 
-        collector.checkThat(resource, hasToString("Partial<SimplePartialResource>{name=value, title=title, "
-                + "linked=Partial<SimplePartialResource>{id=10}}"));
+        String str = objectMapper.writeValueAsString(resource);
+        val parsed = objectMapper.readValue(str, SimplePartialResource.class);
+        collector.checkThat(parsed.hasPartialProperty(SimplePartialResource.Fields.NAME), is(true));
+        collector.checkThat(parsed.hasPartialProperty(SimplePartialResource.Fields.TITLE), is(true));
+        collector.checkThat(parsed.hasPartialProperty(SimplePartialResource.Fields.DESCRIPTION), is(false));
+        collector.checkThat(parsed.hasPartialProperty(SimplePartialResource.Fields.LINKED), is(true));
+        collector.checkThat(parsed.getLinked().hasPartialProperty(SimplePartialResource.FIELD_ID), is(true));
+        collector.checkThat(parsed.getLinked().hasPartialProperty(SimplePartialResource.Fields.NAME), is(false));
     }
 
     @Test

@@ -1,23 +1,11 @@
 package com.seregamorph.restapi.partial;
 
-import static com.seregamorph.restapi.utils.ClassUtils.getFieldValue;
-import static com.seregamorph.restapi.utils.ClassUtils.setFieldValue;
-import static lombok.AccessLevel.PACKAGE;
-
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.seregamorph.restapi.base.BasePayload;
 import com.seregamorph.restapi.mapstruct.Renamed;
 import com.seregamorph.restapi.utils.ClassUtils;
 import com.seregamorph.restapi.utils.TypeUtils;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
 import lombok.EqualsAndHashCode;
 import lombok.Setter;
 import lombok.SneakyThrows;
@@ -26,10 +14,18 @@ import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.springframework.beans.BeanUtils;
 
+import java.lang.reflect.Field;
+import java.util.*;
+
+import static com.seregamorph.restapi.utils.ClassUtils.getFieldValue;
+import static com.seregamorph.restapi.utils.ClassUtils.setFieldValue;
+import static lombok.AccessLevel.PACKAGE;
+
 /**
  * Base class to support partial Jackson nodes serialization and deserialization.
  *
- * See com.seregamorph.restapi.partial.PartialPayloadFactory, com.seregamorph.restapi.partial.PartialPayloadDeserializer
+ * See {@link com.seregamorph.restapi.partial.PartialPayloadFactory},
+ * {@link com.seregamorph.restapi.partial.PartialPayloadDeserializer}
  */
 // For lombok to work properly, use hard coded values instead of static final ones
 @EqualsAndHashCode(doNotUseGetters = true, exclude = {"payloadClass", "partialProperties"})
