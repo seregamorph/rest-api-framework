@@ -1,19 +1,8 @@
 package com.seregamorph.restapi.client;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-
 import com.seregamorph.restapi.utils.ContentUtils;
 import com.seregamorph.restapi.utils.PrintStringWriter;
 import com.seregamorph.restapi.utils.RegexReplaceTemplate;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import javax.annotation.Nullable;
 import lombok.val;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;
@@ -22,6 +11,17 @@ import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.util.StreamUtils;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * Interceptor for RestTemplate/TestRestTemplate that logs HTTP request and response (on the level of RestTemplate
@@ -83,11 +83,18 @@ public abstract class AbstractLoggingInterceptor<T extends AbstractLoggingInterc
                 e.printStackTrace(out);
             }
 
-            log(out.toString(), exception);
+            if (exception == null) {
+                logSuccess(out.toString());
+            } else {
+                // 4xx, 5xx, connect/socket/read timeout
+                logFailure(out.toString(), exception);
+            }
         }
     }
 
-    protected abstract void log(String message, @Nullable Throwable exception);
+    protected abstract void logSuccess(String message);
+
+    protected abstract void logFailure(String message, Throwable exception);
 
     private String formatRequest(HttpRequest request, byte[] requestBody) {
         val out = new PrintStringWriter();
