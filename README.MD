@@ -1,7 +1,7 @@
 # REST API framework
 
 # Supported JDK
-Supported JDK 8 and JDK 11.
+Supported JDK 8, 11 and 17.
 
 # Framework features
 
@@ -71,7 +71,4 @@ parsed.hasPartialProperty(SimplePartialResource.Fields.LINKED);             // t
 parsed.getLinked().hasPartialProperty(SimplePartialResource.FIELD_ID);      // true
 parsed.getLinked().hasPartialProperty(SimplePartialResource.Fields.NAME);   // false
 ```
-
-# Known issues
-At the moment JDK 17 is not supported
 
