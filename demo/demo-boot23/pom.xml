@@ -14,7 +14,7 @@
 
     <properties>
         <spring.version>5.2.7.RELEASE</spring.version>
-        <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
+        <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <spring-data.version>2.3.1.RELEASE</spring-data.version>
         <jackson.version>2.11.0</jackson.version>
     </properties>

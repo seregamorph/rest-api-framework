@@ -13,7 +13,7 @@
     <artifactId>rest-api-framework-demo-boot24-kotlin</artifactId>
 
     <properties>
-        <spring-boot.version>2.4.4</spring-boot.version>
+        <spring-boot.version>2.4.13</spring-boot.version>
         <spring-data.version>2.4.6</spring-data.version>
         <jackson.version>2.11.4</jackson.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
@@ -93,6 +93,7 @@
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
                 <configuration>
                     <args>
                         <arg>-Xjsr305=strict</arg>
