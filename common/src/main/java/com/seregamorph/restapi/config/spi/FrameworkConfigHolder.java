@@ -1,11 +1,12 @@
 package com.seregamorph.restapi.config.spi;
 
 import com.seregamorph.restapi.search.SearchOperator;
-import java.util.ServiceLoader;
 import lombok.Getter;
 import lombok.experimental.UtilityClass;
 import lombok.val;
 import org.springframework.util.CollectionUtils;
+
+import java.util.ServiceLoader;
 
 @UtilityClass
 public class FrameworkConfigHolder {
@@ -14,7 +15,7 @@ public class FrameworkConfigHolder {
     private static final FrameworkConfig frameworkConfig = loadFrameworkConfig();
 
     private static FrameworkConfig loadFrameworkConfig() {
-        val loader = ServiceLoader.load(FrameworkConfig.class);
+        val loader = ServiceLoader.load(FrameworkConfig.class, FrameworkConfigHolder.class.getClassLoader());
 
         if (loader.iterator().hasNext()) {
             FrameworkConfig config = loader.iterator().next();
