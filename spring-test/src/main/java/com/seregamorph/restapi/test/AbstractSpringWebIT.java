@@ -1,6 +1,7 @@
 package com.seregamorph.restapi.test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.seregamorph.testsmartcontext.junit4.AbstractJUnit4SpringIntegrationTest;
 import com.seregamorph.restapi.test.listeners.DatabaseStateResetTestExecutionListener;
 import com.seregamorph.restapi.test.utils.JsonExtensions;
 import org.junit.After;
@@ -23,7 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
         DatabaseStateResetTestExecutionListener.class
 })
 @Transactional
-public abstract class AbstractSpringWebIT extends AbstractJUnit4SpringContextTests
+public abstract class AbstractSpringWebIT extends AbstractJUnit4SpringIntegrationTest
         implements JsonExtensions {
 
     protected final Logger log = LoggerFactory.getLogger(getClass());

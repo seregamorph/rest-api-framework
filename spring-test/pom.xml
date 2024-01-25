@@ -12,6 +12,16 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.github.seregamorph</groupId>
+            <artifactId>spring-test-smart-context</artifactId>
+            <version>0.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.seregamorph.restapi</groupId>
             <artifactId>rest-api-framework-common</artifactId>
         </dependency>
