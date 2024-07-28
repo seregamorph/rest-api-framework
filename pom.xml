@@ -55,7 +55,7 @@
         <jetbrains-annotations.version>20.1.0</jetbrains-annotations.version>
         <junit.version>4.13.2</junit.version>
         <hamcrest.version>1.3</hamcrest.version>
-        <javassist.version>3.24.0-GA</javassist.version>
+        <javassist.version>3.30.2-GA</javassist.version>
         <openpojo.version>0.9.1</openpojo.version>
         <easy-random.version>4.3.0</easy-random.version>
         <json-path.version>2.4.0</json-path.version>
