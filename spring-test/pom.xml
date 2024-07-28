@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>com.seregamorph.restapi</groupId>
-            <artifactId>rest-api-framework-common</artifactId>
+            <artifactId>rest-api-framework-spring</artifactId>
         </dependency>
         <dependency>
             <groupId>com.seregamorph.restapi</groupId>

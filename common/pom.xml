@@ -76,11 +76,6 @@
 
         <!--test-->
         <dependency>
-            <groupId>com.seregamorph.restapi</groupId>
-            <artifactId>rest-api-framework-common-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>

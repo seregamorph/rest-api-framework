@@ -1,8 +1,12 @@
 package com.seregamorph.restapi.partial;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.seregamorph.restapi.base.IdPartial;
+import com.seregamorph.restapi.base.IdResource;
 import com.seregamorph.restapi.test.common.AbstractUnitTest;
 import com.seregamorph.restapi.test.utils.JsonExtensions;
+import lombok.Data;
+import lombok.experimental.FieldNameConstants;
 import lombok.val;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +15,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 
+import static com.seregamorph.restapi.partial.PartialPayloadFactory.partial;
 import static org.hamcrest.Matchers.*;
 
 public class PartialPayloadFactoryTest extends AbstractUnitTest implements JsonExtensions {
@@ -247,4 +252,31 @@ public class PartialPayloadFactoryTest extends AbstractUnitTest implements JsonE
                 .set(SimplePartialResource.Fields.TITLE, VALUE_TITLE)));
     }
 
+    public interface SimplePartial extends IdPartial<Long> {
+
+        @Required
+        String getName();
+
+        @Required
+        String getTitle();
+    }
+
+    @Data
+    @FieldNameConstants
+    static class SimplePartialResource extends IdResource<Long, SimplePartialResource> implements SimplePartial {
+
+        private String name;
+
+        private String title;
+
+        private String description;
+
+        private int version;
+
+        private SimplePartialResource linked;
+
+        public static SimplePartialResource create() {
+            return partial(SimplePartialResource.class);
+        }
+    }
 }

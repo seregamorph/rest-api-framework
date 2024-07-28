@@ -1,10 +1,5 @@
 package com.seregamorph.restapi.controllers;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasToString;
-import static org.springframework.http.HttpMethod.POST;
-import static org.springframework.http.HttpStatus.CREATED;
-
 import com.seregamorph.restapi.test.AbstractSpringTest;
 import lombok.val;
 import org.junit.After;
@@ -13,6 +8,11 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasToString;
+import static org.springframework.http.HttpMethod.POST;
+import static org.springframework.http.HttpStatus.CREATED;
 
 public class AbstractBaseRestControllerTest extends AbstractSpringTest {
 

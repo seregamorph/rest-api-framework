@@ -4,12 +4,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.seregamorph.restapi.utils.RelaxedObjects;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.function.Predicate;
-import java.util.regex.Pattern;
-import javax.annotation.Nullable;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 import lombok.val;
@@ -17,6 +11,13 @@ import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
 import org.hamcrest.TypeSafeMatcher;
+
+import javax.annotation.Nullable;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
 
 @UtilityClass
 @SuppressWarnings({"unused", "WeakerAccess"})

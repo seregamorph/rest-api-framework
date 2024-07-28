@@ -1,5 +1,13 @@
 package com.seregamorph.restapi.test.utils;
 
+import javassist.ClassPool;
+import javassist.NotFoundException;
+import lombok.experimental.UtilityClass;
+import lombok.extern.slf4j.Slf4j;
+import lombok.val;
+import org.springframework.util.Assert;
+
+import javax.annotation.Nullable;
 import java.io.Serializable;
 import java.lang.invoke.MethodHandleInfo;
 import java.lang.invoke.SerializedLambda;
@@ -8,13 +16,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Stream;
-import javassist.ClassPool;
-import javassist.NotFoundException;
-import javax.annotation.Nullable;
-import lombok.experimental.UtilityClass;
-import lombok.extern.slf4j.Slf4j;
-import lombok.val;
-import org.springframework.util.Assert;
 
 @UtilityClass
 @Slf4j
@@ -151,5 +152,4 @@ public class TestLambdaUtils {
             throw new IllegalStateException("Failed to load class " + implClassName, e);
         }
     }
-
 }
