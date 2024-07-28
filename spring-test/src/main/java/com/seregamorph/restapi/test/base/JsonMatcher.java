@@ -1,15 +1,13 @@
 package com.seregamorph.restapi.test.base;
 
-import static com.seregamorph.restapi.test.utils.MoreMatchers.hasRelaxedValue;
-import static com.seregamorph.restapi.test.utils.StandardValues.jsonObject;
-import static lombok.AccessLevel.PRIVATE;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasSize;
-import static org.hamcrest.Matchers.notNullValue;
-import static org.hamcrest.Matchers.nullValue;
-
 import com.google.common.collect.Lists;
 import com.seregamorph.restapi.base.BasePayload;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import org.hamcrest.Matcher;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.Collection;
@@ -17,11 +15,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.BiFunction;
 import java.util.function.Function;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import org.hamcrest.Matcher;
+
+import static com.seregamorph.restapi.test.utils.RelaxedMatchers.hasRelaxedValue;
+import static com.seregamorph.restapi.test.utils.StandardValues.jsonObject;
+import static lombok.AccessLevel.PRIVATE;
+import static org.hamcrest.Matchers.*;
 
 @Getter
 @RequiredArgsConstructor(access = PRIVATE)

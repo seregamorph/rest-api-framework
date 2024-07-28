@@ -1,21 +1,17 @@
 package com.seregamorph.restapi.test.base;
 
-import static com.seregamorph.restapi.search.SearchOperator.CONTAINS;
-import static com.seregamorph.restapi.search.SearchOperator.EQUAL;
-import static com.seregamorph.restapi.search.SearchOperator.NOT_CONTAINS;
-import static com.seregamorph.restapi.search.SearchOperator.NOT_EQUAL;
-import static com.seregamorph.restapi.test.base.SearchResultMatchers.eachMatches;
-import static com.seregamorph.restapi.test.base.SearchResultMatchers.matches;
-import static com.seregamorph.restapi.test.utils.MoreMatchers.hasRelaxedValue;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasItem;
-import static org.hamcrest.Matchers.not;
-
 import com.seregamorph.restapi.test.common.AbstractUnitTest;
+import org.junit.Test;
+
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.Collections;
-import org.junit.Test;
+
+import static com.seregamorph.restapi.search.SearchOperator.*;
+import static com.seregamorph.restapi.test.base.SearchResultMatchers.eachMatches;
+import static com.seregamorph.restapi.test.base.SearchResultMatchers.matches;
+import static com.seregamorph.restapi.test.utils.RelaxedMatchers.hasRelaxedValue;
+import static org.hamcrest.Matchers.*;
 
 public class SearchResultMatchersTest extends AbstractUnitTest {
 

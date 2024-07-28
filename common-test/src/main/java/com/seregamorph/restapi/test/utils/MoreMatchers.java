@@ -3,7 +3,6 @@ package com.seregamorph.restapi.test.utils;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.seregamorph.restapi.utils.RelaxedObjects;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 import lombok.val;
@@ -177,21 +176,6 @@ public class MoreMatchers {
     public static Matcher<String> matches(String regex) {
         Pattern pattern = Pattern.compile(regex);
         return matches(pattern);
-    }
-
-    public static Matcher<Object> hasRelaxedValue(Object expected) {
-        return new TypeSafeMatcher<Object>() {
-
-            @Override
-            protected boolean matchesSafely(Object item) {
-                return RelaxedObjects.equals(item, expected);
-            }
-
-            @Override
-            public void describeTo(Description description) {
-                description.appendText("<" + expected + ">");
-            }
-        };
     }
 
     private static <T> Matcher<Collection<? extends T>> ordered(Comparator<? super T> comparator, boolean allowEqual,
