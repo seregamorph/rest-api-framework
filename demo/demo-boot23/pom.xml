@@ -17,6 +17,7 @@
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <spring-data.version>2.3.1.RELEASE</spring-data.version>
         <jackson.version>2.11.0</jackson.version>
+        <junit-platform.version>1.7.2</junit-platform.version>
     </properties>
 
     <dependencyManagement>
@@ -27,6 +28,17 @@
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-commons</artifactId>
+                <version>${junit-platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-engine</artifactId>
+                <version>${junit-platform.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
