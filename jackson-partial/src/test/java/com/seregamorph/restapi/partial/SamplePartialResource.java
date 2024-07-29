@@ -3,7 +3,6 @@ package com.seregamorph.restapi.partial;
 import static com.seregamorph.restapi.partial.PartialPayloadFactory.partial;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.seregamorph.restapi.base.IdResource;
 import java.util.List;
 import java.util.Set;
 import lombok.Getter;
@@ -16,7 +15,7 @@ import lombok.experimental.FieldNameConstants;
 @Getter
 @Setter
 @FieldNameConstants
-class SamplePartialResource extends IdResource<Long, SamplePartialResource> implements SamplePartial {
+class SamplePartialResource extends TestIdResource<Long, SamplePartialResource> implements SamplePartial {
 
     public static final String JSON_PROPERTY_VALUE = "Foo";
     public static final String JSON_PROPERTY_VALUE_2 = "Bar";

@@ -11,9 +11,10 @@
     <description>Rest API Framework</description>
 
     <modules>
-        <module>common-test</module>
         <module>common</module>
+        <module>common-test</module>
         <module>demo</module>
+        <module>jackson-partial</module>
         <module>mapstruct-extensions</module>
         <module>spring-test</module>
         <module>spring</module>
@@ -81,6 +82,11 @@
             <dependency>
                 <groupId>com.seregamorph.restapi</groupId>
                 <artifactId>rest-api-framework-common-test</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.seregamorph.restapi</groupId>
+                <artifactId>jackson-partial</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

@@ -1,9 +1,8 @@
 package com.seregamorph.restapi.partial;
 
-import com.seregamorph.restapi.base.IdPartial;
 import java.util.List;
 
-public interface SamplePartial extends IdPartial<Long> {
+public interface SamplePartial extends TestIdPartial<Long> {
 
     @Required
     String getNormalField1();

@@ -13,7 +13,7 @@ import static com.seregamorph.restapi.test.base.ResultMatchers.success;
 import static com.seregamorph.restapi.test.base.SearchResultMatchers.eachMatches;
 import static com.seregamorph.restapi.test.base.SearchResultMatchers.matches;
 import static com.seregamorph.restapi.test.base.support.QuantityVerificationMode.EXACT_QTY;
-import static com.seregamorph.restapi.test.utils.MoreMatchers.jsonNodeEquals;
+import static com.seregamorph.restapi.test.utils.JsonMatchers.jsonNodeEquals;
 import static com.seregamorph.restapi.test.utils.MoreMatchers.predicate;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.Matchers.hasSize;
