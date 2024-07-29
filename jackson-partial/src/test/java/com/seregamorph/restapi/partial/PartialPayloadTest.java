@@ -3,7 +3,6 @@ package com.seregamorph.restapi.partial;
 import static com.seregamorph.restapi.partial.PartialPayloadFactory.partial;
 import static org.hamcrest.Matchers.equalTo;
 
-import com.seregamorph.restapi.base.IdResource;
 import com.seregamorph.restapi.test.common.AbstractUnitTest;
 import java.util.Collections;
 import java.util.Map;
@@ -66,7 +65,6 @@ public class PartialPayloadTest extends AbstractUnitTest {
                 + "PartialPayload instance via " + PartialPayloadFactory.class.getSimpleName() + ".partial(Class), "
                 + "not with default constructor.");
 
-        resource.hasPartialProperty(IdResource.FIELD_ID);
+        resource.hasPartialProperty(TestIdResource.FIELD_ID);
     }
-
 }

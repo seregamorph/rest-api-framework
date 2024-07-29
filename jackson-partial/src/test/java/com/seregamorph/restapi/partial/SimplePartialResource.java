@@ -2,7 +2,6 @@ package com.seregamorph.restapi.partial;
 
 import static com.seregamorph.restapi.partial.PartialPayloadFactory.partial;
 
-import com.seregamorph.restapi.base.IdResource;
 import lombok.Data;
 import lombok.experimental.FieldNameConstants;
 
@@ -11,7 +10,7 @@ import lombok.experimental.FieldNameConstants;
  */
 @Data
 @FieldNameConstants
-class SimplePartialResource extends IdResource<Long, SimplePartialResource> implements SimplePartial {
+class SimplePartialResource extends TestIdResource<Long, SimplePartialResource> implements SimplePartial {
 
     private String name;
 

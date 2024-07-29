@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>com.seregamorph.restapi</groupId>
-            <artifactId>rest-api-framework-common</artifactId>
+            <artifactId>jackson-partial</artifactId>
         </dependency>
 
         <dependency>
@@ -65,11 +65,21 @@
             <artifactId>annotations</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <optional>true</optional>
+        </dependency>
 
         <dependency>
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
-            <scope>runtime</scope>
+        </dependency>
+
+        <!--TODO-->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
         </dependency>
 
         <!--test-->
