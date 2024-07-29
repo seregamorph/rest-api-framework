@@ -1,7 +1,12 @@
 <extensions>
-  <extension>
-    <groupId>com.gradle</groupId>
-    <artifactId>develocity-maven-extension</artifactId>
-    <version>1.21.6</version>
-  </extension>
+<!--    <extension>-->
+<!--        <groupId>com.gradle</groupId>-->
+<!--        <artifactId>develocity-maven-extension</artifactId>-->
+<!--        <version>1.21.6</version>-->
+<!--    </extension>-->
+    <extension>
+        <groupId>org.apache.maven.extensions</groupId>
+        <artifactId>maven-build-cache-extension</artifactId>
+        <version>1.2.0</version>
+    </extension>
 </extensions>

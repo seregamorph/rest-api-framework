@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache xmlns="http://maven.apache.org/BUILD-CACHE-CONFIG/1.2.0">
+    <input>
+        <plugins>
+            <plugin artifactId="maven-surefire-plugin">
+                <effectivePom>
+                    <excludeProperties>
+                        <excludeProperty>argLine</excludeProperty>
+                    </excludeProperties>
+                </effectivePom>
+            </plugin>
+        </plugins>
+    </input>
+    <configuration>
+        <enabled>true</enabled>
+<!--        <enabled>false</enabled>-->
+        <hashAlgorithm>SHA-256</hashAlgorithm>
+        <local>
+            <maxBuildsCached>3</maxBuildsCached>
+        </local>
+        <remote enabled="true" id="build-cache" saveToRemote="true">
+            <!-- Hint: https://maven.apache.org/extensions/maven-build-cache-extension/remote-cache.html#make-remote-cache-portable
+            -Daether.priority.org.eclipse.aether.transport.http.HttpTransporterFactory=10
+            -Daether.priority.org.eclipse.aether.transport.wagon.WagonTransporterFactory=0
+            -Daether.connector.http.supportWebDav=true -->
+            <url>dav:http://localhost:9080/build-cache</url>
+        </remote>
+        <attachedOutputs>
+            <dirNames>
+                <dirName>surefire-reports</dirName>
+                <dirName>failsafe-reports</dirName>
+            </dirNames>
+        </attachedOutputs>
+        <projectVersioning adjustMetaInf="true"/>
+    </configuration>
+    <executionControl>
+        <runAlways>
+            <executions>
+<!--                <execution groupId="me.qoomon" artifactId="maven-git-versioning-extension">-->
+<!--                    <execIds>-->
+<!--                        <execId>git-versioning</execId>-->
+<!--                    </execIds>-->
+<!--                </execution>-->
+                <execution artifactId="maven-dependency-plugin">
+                    <execIds>
+                        <execId>unpack-autoupdate</execId>
+                    </execIds>
+                </execution>
+            </executions>
+            <goalsLists>
+                <goalsList artifactId="maven-install-plugin">
+                    <goals>
+                        <goal>install</goal>
+                    </goals>
+                </goalsList>
+                <goalsList artifactId="maven-compiler-plugin">
+                    <goals>
+                        <goal>compile</goal>
+                        <goal>testCompile</goal>
+                    </goals>
+                </goalsList>
+                <goalsList artifactId="maven-jar-plugin">
+                    <goals>
+                        <goal>jar</goal>
+                    </goals>
+                </goalsList>
+            </goalsLists>
+        </runAlways>
+        <reconcile>
+            <plugins>
+                <plugin artifactId="maven-surefire-plugin" goal="test">
+                    <reconciles>
+                        <reconcile propertyName="it.test"/>
+                        <reconcile propertyName="skip" skipValue="true"/>
+                        <reconcile propertyName="skipExec" skipValue="true"/>
+                        <reconcile propertyName="skipTests" skipValue="true"/>
+                        <reconcile propertyName="testFailureIgnore" skipValue="true"/>
+                    </reconciles>
+                </plugin>
+<!--                <plugin artifactId="maven-failsafe-plugin" goal="integration-test">-->
+<!--                    <reconciles>-->
+<!--                        <reconcile propertyName="it.test"/>-->
+<!--                    </reconciles>-->
+<!--                </plugin>-->
+            </plugins>
+        </reconcile>
+    </executionControl>
+</cache>

@@ -1,0 +1,24 @@
+# hint: not needed, you need start_cache_server.sh
+version: '3'
+services:
+  webdav:
+    container_name: docker-webdav-nginx
+    restart: unless-stopped
+    environment:
+      - WEBDAV_USER=admin
+      - WEBDAV_PASS=admin
+      - NGINX_CLIENT_MAX_BODY_SIZE=500M
+    networks:
+      - webdav
+    ports:
+      - '9080:80'
+    volumes:
+      - '.mvn/remote-cache:/var/www/webdav'
+    image: loganmarchione/docker-webdav-nginx:latest
+
+networks:
+  webdav:
+
+volumes:
+  webdav:
+    driver: local

@@ -341,8 +341,9 @@
                 <version>3.4.2</version>
                 <configuration>
                     <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
                         <manifest>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultEntries>false</addDefaultEntries>
                         </manifest>
                     </archive>
                 </configuration>
