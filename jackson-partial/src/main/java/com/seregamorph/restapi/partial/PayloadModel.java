@@ -1,5 +1,7 @@
 package com.seregamorph.restapi.partial;
 
+import com.seregamorph.restapi.base.BasePartial;
+
 import static java.lang.annotation.ElementType.PARAMETER;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
@@ -21,7 +23,7 @@ public @interface PayloadModel {
     /**
      * The model interface class.
      */
-    Class<?> value() default Object.class;
+    Class<?> value() default BasePartial.class;
 
     /**
      * Message returned on failed validation.
