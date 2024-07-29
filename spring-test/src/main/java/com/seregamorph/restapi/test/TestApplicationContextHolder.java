@@ -21,7 +21,7 @@ public class TestApplicationContextHolder {
         return Optional.ofNullable(currentContext.get());
     }
 
-    public void setApplicationContext(ApplicationContext context) {
+    public static void setApplicationContext(ApplicationContext context) {
         currentContext.set(context);
     }
 }
