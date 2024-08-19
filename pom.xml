@@ -62,8 +62,7 @@
         <json-path.version>2.4.0</json-path.version>
 
         <!-- plugins -->
-        <maven-surefire-plugin.version>3.3.1</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>3.3.1</maven-failsafe-plugin.version>
+        <maven-surefire.version>3.2.5</maven-surefire.version>
         <surefire.runOrder>alphabetical</surefire.runOrder>
         <failsafe.runOrder>alphabetical</failsafe.runOrder>
         <maven.javadoc.skip>true</maven.javadoc.skip>
@@ -349,7 +348,6 @@
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <argLine>-Djava.awt.headless=true -Duser.language=en -Duser.country= -Duser.timezone=UTC
                         ${argLine.addOpens}</argLine>
@@ -357,18 +355,17 @@
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>${maven-failsafe-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>integration-test</goal>
                             <goal>verify</goal>
                         </goals>
-                        <configuration>
-                            <argLine>-Djava.awt.headless=true -Duser.language=en -Duser.country= -Duser.timezone=UTC</argLine>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <argLine>-Djava.awt.headless=true -Duser.language=en -Duser.country= -Duser.timezone=UTC</argLine>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -402,6 +399,16 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
                     <version>3.6.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${maven-surefire.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
