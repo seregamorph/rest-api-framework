@@ -26,6 +26,11 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
 
+        <!--
+        https://maven.apache.org/guides/mini/guide-reproducible-builds.html
+        -->
+        <project.build.outputTimestamp>2025-01-01T01:00:00Z</project.build.outputTimestamp>
+
         <nexus-staging-maven-plugin.phase>deploy</nexus-staging-maven-plugin.phase>
 
         <lombok.version>1.18.34</lombok.version>
