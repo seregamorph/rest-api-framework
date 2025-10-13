@@ -67,7 +67,7 @@
         <json-path.version>2.4.0</json-path.version>
 
         <!-- plugins -->
-        <maven-surefire.version>3.2.5</maven-surefire.version>
+        <maven-surefire.version>3.5.4</maven-surefire.version>
         <surefire.runOrder>alphabetical</surefire.runOrder>
         <failsafe.runOrder>alphabetical</failsafe.runOrder>
         <maven.javadoc.skip>true</maven.javadoc.skip>
