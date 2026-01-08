@@ -71,7 +71,7 @@
         <surefire.runOrder>alphabetical</surefire.runOrder>
         <failsafe.runOrder>alphabetical</failsafe.runOrder>
         <maven.javadoc.skip>true</maven.javadoc.skip>
-        <!-- Note: overriden for JDK 8 via profile -->
+        <!-- Note: overridden for JDK 8 via profile -->
         <argLine.addOpens>--add-opens java.base/java.lang=ALL-UNNAMED
             --add-opens java.base/java.time=ALL-UNNAMED</argLine.addOpens>
     </properties>
