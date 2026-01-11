@@ -12,7 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>demo-boot23</module>
+        <module>demo-boot27</module>
         <module>demo-boot27-kotlin</module>
         <module>demo-common</module>
         <module>demo-version-agnostic</module>
