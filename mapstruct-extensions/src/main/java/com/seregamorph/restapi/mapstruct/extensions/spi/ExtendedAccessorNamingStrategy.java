@@ -39,7 +39,8 @@ public class ExtendedAccessorNamingStrategy extends DefaultAccessorNamingStrateg
         String methodName = method.getSimpleName().toString();
 
         for (String prefix : PREFIXES_SETTER) {
-            if (methodName.startsWith(prefix) && methodName.length() > prefix.length()) {
+            if (methodName.startsWith(prefix) && methodName.length() > prefix.length()
+                    && method.getParameters().size() == 1) {
                 return true;
             }
         }
