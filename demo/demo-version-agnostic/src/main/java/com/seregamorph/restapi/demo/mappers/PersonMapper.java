@@ -5,6 +5,6 @@ import com.seregamorph.restapi.demo.resources.PersonResource;
 import com.seregamorph.restapi.mapstruct.BiDirectionalMapper;
 import org.mapstruct.Mapper;
 
-@Mapper(uses = TeamMapper.class)
+@Mapper(componentModel = "springlazy", uses = TeamMapper.class)
 public interface PersonMapper extends BiDirectionalMapper<Person, PersonResource> {
 }

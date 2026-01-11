@@ -13,10 +13,11 @@
     <artifactId>rest-api-framework-demo-version-agnostic</artifactId>
 
     <properties>
-        <spring.version>5.3.2</spring.version>
-        <spring-boot.version>2.4.1</spring-boot.version>
-        <spring-data.version>2.4.2</spring-data.version>
-        <jackson.version>2.11.3</jackson.version>
+        <spring.version>5.3.39</spring.version>
+        <spring-boot.version>2.7.12</spring-boot.version>
+        <spring-data.version>2.7.7</spring-data.version>
+        <jackson.version>2.13.5</jackson.version>
+        <junit-platform.version>1.10.3</junit-platform.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
     </properties>
 
