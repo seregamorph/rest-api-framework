@@ -46,9 +46,6 @@
         <spring-boot.version>1.5.10.RELEASE</spring-boot.version>
         <kotlin.version>1.9.23</kotlin.version>
         <mockito.version>1.10.19</mockito.version>
-        <commons-lang3.version>3.12.0</commons-lang3.version>
-        <commons-io.version>2.4</commons-io.version>
-        <commons-collections4.version>4.4</commons-collections4.version>
         <httpclient.version>4.5.12</httpclient.version>
         <commons-math3.version>3.5</commons-math3.version>
         <slf4j.version>1.7.25</slf4j.version>
@@ -186,7 +183,7 @@
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>${commons-io.version}</version>
+                <version>2.21.0</version>
             </dependency>
 
             <dependency>
@@ -249,7 +246,7 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
-                <version>${commons-collections4.version}</version>
+                <version>4.5.0</version>
             </dependency>
 
             <dependency>
@@ -261,7 +258,7 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>${commons-lang3.version}</version>
+                <version>3.20.0</version>
             </dependency>
 
             <dependency>
