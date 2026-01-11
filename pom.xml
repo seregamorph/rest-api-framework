@@ -37,7 +37,7 @@
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <!--please note that for production safety reasons only test scope or test modules usage is allowed
         (no back compatibility, project guava version can vary or be upgraded)-->
-        <guava.version>18.0</guava.version>
+        <guava.version>33.5.0-jre</guava.version>
         <!--we support both spring 4 and 5, but need 5 here to allow compilation-->
         <spring.version>5.0.15.RELEASE</spring.version>
         <spring-data.version>1.10.0.RELEASE</spring-data.version>
